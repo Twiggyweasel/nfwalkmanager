@@ -1,0 +1,14 @@
+<% @walker.each do |walker| %>
+  <% @walks.each do |walk| %>
+    <% if walk.id === walker.team.walk_id %>
+    <div class='page-header'>
+        <h1><%= walk.name %> <%= link_to "View Walk", walk_path(walk), class:'btn btn-info' %></h1>
+    </div>    
+    <% end %>  
+        <% if walker.team.walk_id === walk.id %>
+          <h4><%= walker.first_name %> <%= walker.last_name %> - <small>on Team <%= walker.team.name %></small></h4>
+          <%= link_to "Edit", edit_walker_path(walker), class:'btn btn-primary' %>
+          <%= link_to "View Team", team_path(walker.team), class:'btn btn-info' %>
+        <% end %>
+    <% end %>
+<% end %>

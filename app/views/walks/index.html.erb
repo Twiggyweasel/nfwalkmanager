@@ -1,0 +1,20 @@
+<div class='page-header'>
+  <h2>All Walks</h2>
+</div>
+<div class='row-fluid'>
+  <%= link_to "Create Walk", new_walk_path, class:'btn btn-primary' %>
+  <br>
+  <br>
+  <% @walk.each do |walk| %>
+  <div class='col-md-6'>
+    <div class='well text-center'>
+      <h3><%= walk.name %></h3>
+      <h4><%= walk.location %></h4>
+      <h5><%= walk.date %></h5>
+      <%= link_to "View", walk_path(walk), class:'btn btn-primary' %>
+      <%= link_to "Edit", edit_walk_path(walk), class:'btn btn-info' %>
+      <%= link_to 'delete', walk, method: :delete, data: {confirm: 'Are you sure? (This can not be undone)'}, class:'btn btn-danger' %>
+    </div>
+  </div>
+  <% end %>
+</div>

@@ -1,0 +1,24 @@
+<%= form_for @walker do |f| %>
+<label>Walkers Name</label>
+<%= f.text_field :first_name, class:'form-control', placeholder:'First Name' %>
+<br>
+<%= f.text_field :last_name, class:'form-control', placeholder:'Last Name' %>
+<br>
+<label>Team Name:</label>
+<%= f.select :team_id, @walk.teams.collect { |c| [c.name, c.id] }, class:'form-control' %>
+<br>
+<br>
+<label>Pledge Type:</label>
+<%= f.select :pledge_type, ['Registration', 'Fundraising'] , class:'form-control'%>
+<br>
+<br>
+<label>Amount Pledged</label>
+<%= f.number_field :amount_owed, class:'form-control' %>
+<br>
+<label>Amount Paided</label>
+<%= f.number_field :amount_paid, class:'form-control' %>
+<br>
+<%= f.submit(@walker.new_record? ? "Create Walker" : "Update Walker", class:'btn btn-success btn-block') %>
+<br>
+<%= link_to 'Cancel', :back , class:'btn btn-danger btn-block' %>
+<% end %>

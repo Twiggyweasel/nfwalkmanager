@@ -1,0 +1,9 @@
+<%= form_for @team do |t| %>
+  <label>Team Name</label>
+  <%= t.text_field :name, class:'form-control', placeholder:'Team Name' %>
+  <br>
+  <%= t.hidden_field :walk_id, :value => @walk.id %>
+  <%= t.submit(@team.new_record? ? "Create Team" : "Edit Team", class:'btn btn-success btn-block') %>
+<% end %>
+  <br>
+  <%= link_to 'Cancel', root_path , class:'btn btn-danger btn-block' %>

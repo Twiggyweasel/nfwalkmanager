@@ -1,0 +1,50 @@
+<div class='row'>
+  <div class='col-md-6 col-md-offset-3'>
+    <div class='panel panel-primary panel-height'>
+      <div class='panel-heading'>
+        Manage a walk
+      </div>
+      <div class='panel-body' >
+        <div class='col-md-12 text-center'>
+          <p>View Teams, Donation Amounts, Registration Status</p>
+          <br>
+          <%= link_to(walks_path, class:'btn btn-primary btn-block') do %>
+            <span class='glyphicon glyphicon-tasks'></span> Manage a Walk
+          <% end %>
+        </div>    
+      </div>
+    </div>  
+  </div>
+  <div class='col-md-6 col-md-offset-3'>
+    <div class='panel panel-info panel-height'>
+      <div class='panel-heading'>
+        Create a Walk
+      </div>
+      <div class='panel-body'>
+        <div class='col-md-12 text-center'>  
+          <p>Create a new walk including teams, goals, and location</p>
+          <br>
+          <%= link_to(new_walk_path, class:'btn btn-info btn-block') do %>
+            <span class='glyphicon glyphicon-calendar'></span> Create Now
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='col-md-6 col-md-offset-3'>
+    <div class='panel panel-danger panel-height'>
+      <div class='panel-heading'>
+        Reports
+      </div>
+      <div class='panel-body'>
+        <div class='col-md-12 text-center'>
+          <p>Generate Reports: # of walkers, amounts raised, highest contributors</p>
+          <br>
+          <%= link_to(reports_path, class:'btn btn-danger btn-block') do %>
+            <span class='glyphicon glyphicon-stats'></span> Run a Report
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

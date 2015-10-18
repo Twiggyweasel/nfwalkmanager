@@ -1,0 +1,18 @@
+<%= form_for @walk do |f| %>
+  <label>Walk Name</label>
+  <%= f.text_field :name, class:'form-control', placeholder:'NF Walk' %>
+  <br>
+  <label>Walk Location</label>
+  <%= f.text_field :location, class:'form-control', placeholder:'City/Park' %>
+  <br>
+  <label>Date of Walk</label>
+  <%= f.date_field :date, class:'form-control' %>
+  <br>
+  <label>Fundraising Goal</label>
+  <%= f.number_field :goal, class:'form-control' %>
+  <br>
+  <%= f.submit(@walk.new_record? ? "Create Walk" : "Edit Walk", class:'btn btn-success btn-block') %>
+  
+<% end %>
+  <br>
+  <%= link_to 'Cancel', root_path , class:'btn btn-danger btn-block' %>

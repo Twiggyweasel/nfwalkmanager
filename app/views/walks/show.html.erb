@@ -2,7 +2,7 @@
   <span class='glyphicon glyphicon-chevron-left'></span>All Walks
 <% end %>
 <div class='page-header'>
-  <h1><%= @walk.name %> <small> - <%= @walk.location %> - <%= @walk.date %></small></h1>
+  <h1><%= @walk.name %> <small> - <%= @walk.location %> - <%= @walk.date %></h1>
 </div>
 <div class='panel panel-default'>
   <div class='container-fluid'>
@@ -106,7 +106,7 @@
                 <td><%= number_to_currency walker.amount_owed %></td>
                 <td><%= number_to_currency walker.amount_paid %></td>
                 <td><%= number_to_currency walker.owed_balance %></td>
-                <td><%= link_to(edit_walker_path, class:' btn btn-default') do %><span class='glyphicon glyphicon-pencil'></span><% end %> <%= link_to(walker, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger') do %><span class='glyphicon glyphicon-remove-circle'></span><% end %></td>
+                <td><%= link_to(edit_walker_path(walker), class:' btn btn-default') do %><span class='glyphicon glyphicon-pencil'></span><% end %> <%= link_to(walker, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger') do %><span class='glyphicon glyphicon-remove-circle'></span><% end %></td>
               </tr>
               <% end %>
             </tbody>

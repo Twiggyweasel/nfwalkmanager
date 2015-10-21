@@ -50,6 +50,6 @@ class WalkersController < ApplicationController
   
   private 
     def walker_params
-      params.require(:walker).permit(:first_name,:last_name, :type, :amount_owed, :amount_paid, :walk_up, :team_id)
+      params.require(:walker).permit(:first_name,:last_name, :pledge_type, :amount_owed, :amount_paid, :walk_up, :team_id)
     end
 end

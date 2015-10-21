@@ -1,7 +1,7 @@
 class Walker < ActiveRecord::Base
     belongs_to :team
     def owed_balance
-       self.amount_paid - self.amount_owed 
+        self.amount_owed - self.amount_paid
     end
     
     def self.search(query)

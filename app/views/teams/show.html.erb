@@ -12,8 +12,9 @@
       <thead>
         <tr>
           <th>Name</th>
-          <th>owed</th>
+          <th>Owed</th>
           <th>Paid</th>
+          <th>Remaining</th>
           <th>Actions</th>
         </tr>
       </thead>
@@ -21,8 +22,9 @@
         <% @team.walkers.each do |walker| %>
         <tr>
           <td><%= walker.first_name %> <%= walker.last_name %></td>
-          <td><%= walker.amount_owed %></td>
-          <td><%= walker.amount_paid %></td>
+          <td><%= number_to_currency walker.amount_owed %></td>
+          <td><%= number_to_currency walker.amount_paid %></td>
+          <td><%= number_to_currency walker.owed_balance %></td>
           <td>
             <%= link_to(walker_path(walker), class:'btn btn-primary') do %>
             <span class='glyphicon glyphicon-pencil'></span>
